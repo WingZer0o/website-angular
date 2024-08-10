@@ -1,5 +1,23 @@
 .tech-used-image {
     border-radius: 50%;
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
+}
+
+.tech-used-image:hover {
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(-360deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

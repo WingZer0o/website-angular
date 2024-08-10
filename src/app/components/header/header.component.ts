@@ -23,7 +23,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const nameTypeWritter = new Typewritter(this.nameTypeWritter.nativeElement, {typingSpeed: 100, deletingSpeed: 150});
-    nameTypeWritter.typeString("Mike Mulchrone").deleteString().start();
+    nameTypeWritter.typeString("Mike Mulchrone").deleteString().start().then(() => {
+      
+    });
   }
 
   ngOnInit(): void {
