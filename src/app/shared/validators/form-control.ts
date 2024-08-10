@@ -1,4 +1,4 @@
-const luhn = require("luhn");
+import luhn from "luhn";
 import { AbstractControl } from "@angular/forms";
 
 export const passwordValidator = (control: AbstractControl) => {
