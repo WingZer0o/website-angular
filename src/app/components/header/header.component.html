@@ -1,13 +1,14 @@
 <mat-toolbar class="header">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
-    </button>
-    <span>Mike Mulchrone</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-    </button>
+      </button>
+      <mat-menu #menu="matMenu">
+        @for (link of headerMenuLinks; track link) {
+            <button mat-menu-item (click)="mainMenuNavigation(link.link)">
+              <mat-icon>{{link.iconName}}</mat-icon>
+              <span>{{link.name}}</span>
+            </button>
+        }
+      </mat-menu>
+    <span>Mike Mulchrone</span>    
 </mat-toolbar>
