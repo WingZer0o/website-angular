@@ -14,5 +14,10 @@ export const headerMenuLinks: HeaderMenuLink[] = [
         name: "About",
         link: "about",
         iconName: "account_circle"
+    },
+    {
+        name: "Contact",
+        link: "contact",
+        iconName: "contacts"
     }
 ];
