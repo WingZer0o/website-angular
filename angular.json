@@ -32,7 +32,9 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles/styles.scss",
+              "node_modules/primeflex/primeflex.css",
+              "node_modules/primeflex/themes/primeone-light.css"
             ],
             "scripts": []
           },
