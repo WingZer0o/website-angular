@@ -13,7 +13,6 @@ import { Typewritter } from '../../shared/typewritter';
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   public readonly headerMenuLinks = headerMenuLinks;
-  private typeWritterInterval: any;
   
   @ViewChild('nameTypeWritter') 
   nameTypeWritter!: ElementRef<HTMLElement>;
