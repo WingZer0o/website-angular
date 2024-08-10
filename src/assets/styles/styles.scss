@@ -2,10 +2,14 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
+
+// NPM Packages
+@import 'ngx-toastr/toastr';
+
+
+// Custom Style imports.
 @import "./colors.scss";
-@import "./material/card";
-@import "./material/button";
+@import "./material/material";
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.

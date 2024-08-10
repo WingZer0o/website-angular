@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-offset-4 col-4">
-        <mat-card>
+        <mat-card appearance="outlined" class="border-round-sm">
             <mat-card-title class="text-center">Enter Your Information</mat-card-title>
             <mat-card-content>
                 <div class="row">
@@ -23,9 +23,13 @@
                                 <textarea class="message-text-area" matInput placeholder="I think your website is awesome..." formControlName="message"></textarea>
                             </mat-form-field>
                         </div>
-                        <div class="flex justify-content-center flex-wrap">
-                            <button mat-flat-button class="flex align-items-center justify-content-center">Send</button>
-                        </div>
+                        @if (!isSubmitting) {
+                            <div class="flex justify-content-center flex-wrap">
+                                <button mat-flat-button class="flex align-items-center justify-content-center">Send</button>
+                            </div>
+                        } @else {
+                            <mat-spinner></mat-spinner>
+                        }
                     </form>
                 </div>
             </mat-card-content>
