@@ -47,9 +47,10 @@ export class Typewritter {
       return new Promise((resolve, reject) => {
         const interval = setInterval(() => {
           let innerHTML = this.element.innerHTML.slice(0, this.element.innerHTML.length - 1);
-          if (innerHTML.length >= 0) {
+          if (innerHTML.length > 0) {
             this.element.innerHTML = innerHTML;
           } else {
+            this.element.innerHTML = innerHTML;
             clearInterval(interval);
             resolve();
           }
