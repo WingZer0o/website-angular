@@ -1,7 +1,7 @@
 import { serveDir } from "https://deno.land/std@0.217.0/http/file_server.ts";
 
 Deno.serve(async (req) => {
-  const fsRoot = "dist/browser";
+  const fsRoot = "dist/website-angular/browser";
   const headers = ["Cache-Control: max-age=31536000"];
   const response = await serveDir(req, { fsRoot, headers });
   if (response.status === 404) {
