@@ -1,1 +1,34 @@
-<p>contact works!</p>
+<div class="row">
+    <div class="col-offset-4 col-4">
+        <mat-card appearance="outlined">
+            <mat-card-title class="text-center">Enter Your Information</mat-card-title>
+            <mat-card-content>
+                <div class="row">
+                    <form [formGroup]="contactForm">
+                        <div class="flex justify-content-center flex-wrap">
+                            <mat-form-field class="example-full-width flex align-items-center justify-content-center">
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput placeholder="Ex. patrick@example.com" formControlName="email">
+                            </mat-form-field>
+                        </div>
+                        <div class="flex justify-content-center flex-wrap">
+                            <mat-form-field class="example-full-width flex align-items-center justify-content-center">
+                                <mat-label>Name</mat-label>
+                                <input type="text" matInput placeholder="Ex. patrick@example.com" formControlName="name">
+                            </mat-form-field>
+                        </div>
+                        <div class="flex justify-content-center flex-wrap">
+                            <mat-form-field class="flex align-items-center justify-content-center">
+                                <mat-label>Leave a comment</mat-label>
+                                <textarea class="message-text-area" matInput placeholder="I think your website is awesome..." formControlName="message"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="flex justify-content-center flex-wrap">
+                            <button mat-flat-button class="flex align-items-center justify-content-center">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
