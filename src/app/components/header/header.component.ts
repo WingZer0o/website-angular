@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MaterialModule } from '../../modules/material/material.module';
 import { Router } from '@angular/router';
 import { headerMenuLinks } from './types/header-menu-link';
+import { Typewritter } from '../../shared/typewritter';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +11,23 @@ import { headerMenuLinks } from './types/header-menu-link';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
-  public readonly headerMenuLinks = headerMenuLinks
+export class HeaderComponent implements OnInit, AfterViewInit {
+  public readonly headerMenuLinks = headerMenuLinks;
+  private typeWritterInterval: any;
+  
+  @ViewChild('nameTypeWritter') 
+  nameTypeWritter!: ElementRef<HTMLElement>;
 
   constructor(private router: Router) {
 
+  }
+
+  ngAfterViewInit(): void {
+    const nameTypeWritter = new Typewritter(this.nameTypeWritter.nativeElement, {typingSpeed: 100, deletingSpeed: 150});
+    nameTypeWritter.typeString("Mike Mulchrone").deleteString().start();
+  }
+
+  ngOnInit(): void {
   }
 
   public mainMenuNavigation(route: string): void {
