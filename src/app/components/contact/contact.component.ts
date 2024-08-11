@@ -56,6 +56,8 @@ export class ContactComponent implements OnInit {
     this.isSubmitting = true;
     const dtoBody: ContactDto = this.contactForm.getRawValue();
     this.contactService.submitForm(dtoBody).then((response) => {
+      this.contactForm.reset();
+      this.toastService.success("Thank you for your message, I will respond soon.");
       this.isSubmitting = false;
     }).catch((error) => {
       this.toastService.warning("There was an error submitting the contact me form.")
