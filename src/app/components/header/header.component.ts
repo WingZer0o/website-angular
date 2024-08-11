@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MaterialModule } from '../../modules/material/material.module';
 import { Router } from '@angular/router';
-import { headerMenuLinks } from './types/header-menu-link';
+import { HEADER_MENU_LINKS } from './types/header-menu-link';
 import { Typewritter } from '../../shared/typewritter';
 
 @Component({
@@ -12,7 +12,7 @@ import { Typewritter } from '../../shared/typewritter';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
-  public readonly headerMenuLinks = headerMenuLinks;
+  public readonly headerMenuLinks = HEADER_MENU_LINKS;
   
   @ViewChild('nameTypeWritter') 
   nameTypeWritter!: ElementRef<HTMLElement>;
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-      const typeWritter = new Typewritter(this.nameTypeWritter.nativeElement, {typingSpeed: 50, deletingSpeed: 150})
+      const typeWritter = new Typewritter(this.nameTypeWritter.nativeElement, {typingSpeed: 50, deletingSpeed: 150});
       typeWritter.typeString("Mike Mulchrone").deleteString().typeString("Mike M").deleteString().typeString("Mike Mulchrone").deleteString().start();
   }
 

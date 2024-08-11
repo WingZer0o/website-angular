@@ -4,7 +4,7 @@ export class HeaderMenuLink {
     public iconName!: string;
 }
 
-export const headerMenuLinks: HeaderMenuLink[] = [
+export const HEADER_MENU_LINKS: HeaderMenuLink[] = [
     {
         name: "Home",
         link: "home",
@@ -19,5 +19,10 @@ export const headerMenuLinks: HeaderMenuLink[] = [
         name: "Contact",
         link: "contact",
         iconName: "contacts"
+    },
+    {
+        name: "Blog",
+        link: "blog",
+        iconName: "speaker_notes"
     }
 ];
