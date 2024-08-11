@@ -5,3 +5,9 @@ export interface ContactForm {
     email: FormControl<string | null>;
     message: FormControl<string | null>;
 }
+
+export class ContactDto {
+    name!: string | null;
+    email!: string | null;
+    message!: string | null;
+}
