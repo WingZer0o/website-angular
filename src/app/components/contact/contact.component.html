@@ -20,7 +20,7 @@
                         <div class="flex justify-content-center flex-wrap">
                             <mat-form-field class="flex align-items-center justify-content-center">
                                 <mat-label>Leave a comment</mat-label>
-                                <textarea class="message-text-area" matInput placeholder="I think your website is awesome..." formControlName="message"></textarea>
+                                <textarea class="message-text-area" matInput rows="10" col="50" placeholder="I think your website is awesome..." formControlName="message"></textarea>
                             </mat-form-field>
                         </div>
                         @if (!isSubmitting) {
@@ -28,7 +28,9 @@
                                 <button mat-flat-button class="flex align-items-center justify-content-center">Send</button>
                             </div>
                         } @else {
-                            <mat-spinner></mat-spinner>
+                            <div class="flex justify-content-center flex-wrap" (click)="submitForm()">
+                                <mat-spinner [diameter]="45" class="flex align-items-center justify-content-center"></mat-spinner>
+                            </div>
                         }
                     </form>
                 </div>
