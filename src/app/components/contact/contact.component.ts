@@ -58,7 +58,6 @@ export class ContactComponent implements OnInit {
     this.contactService.submitForm(dtoBody).then((response) => {
       this.isSubmitting = false;
     }).catch((error) => {
-      console.error(error);
       this.toastService.warning("There was an error submitting the contact me form.")
       this.isSubmitting = false;
     });
