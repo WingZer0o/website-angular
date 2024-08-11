@@ -4,21 +4,13 @@
             <mat-card-title class="text-center">Technology Used</mat-card-title>
             <mat-card-content>
                 <div class="grid">
-                    <div class="col-4">
-                        <a href="https://angular.dev/" target="_blank">
-                            <img class="tech-used-image" src="/assets/images/Angular_full_color_logo.svg" />
-                        </a>
-                    </div>
-                    <div class="col-4">
-                        <a href="https://deno.land" target="_blank">
-                            <img class="tech-used-image " src="/assets/images/deno.svg" />
-                        </a>
-                    </div>
-                    <div class="col-4">
-                        <a href="https://www.typescriptlang.org/" target="_blank">
-                            <img class="tech-used-image " src="/assets/images/typescript.svg" />
-                        </a>
-                    </div>
+                    @for (tech of techUsedLinks; track tech) {
+                        <div class="col-4">
+                            <a [href]="tech.href" target="_blank">
+                                <img class="tech-used-image" [src]="tech.src" />
+                            </a>
+                        </div>
+                    }
                 </div>
             </mat-card-content>
         </mat-card>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MaterialModule } from '../../modules/material/material.module';
+import { TECH_USED_LINKS } from './home.types';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,10 @@ import { MaterialModule } from '../../modules/material/material.module';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  public readonly techUsedLinks = TECH_USED_LINKS;
 
+  ngOnInit(): void {
+    
+  }
 }
